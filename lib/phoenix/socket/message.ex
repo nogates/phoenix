@@ -28,7 +28,7 @@ defmodule Phoenix.Socket.Message do
       }
     rescue
       err in [KeyError] ->
-        raise Phoenix.Socket.InvalidMessageError, message: "missing key #{inspect err.key}"
+        raise Phoenix.Socket.InvalidMessageError, message: "missing key #{inspect err.key} in map #{ inspect map}"
     end
   end
 end
